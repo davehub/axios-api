@@ -1,39 +1,51 @@
-# Axios - HTTP Client
+## Que faire mon projet ?
+
+mon fichier axios-api.js est une Api qui permet de lancer des requetes via le lien `https://jsonplaceholder.typicode.com/users/` qui est mon outils de test pour mes requetes GET, POST, PUT et DELETE .
 
 
-Axios est une bibliothèque JavaScript populaire pour effectuer des requêtes HTTP depuis un navigateur ou Node.js. Elle est basée sur les Promesses et offre une API simple pour interagir avec des APIs REST.
- 
+## Comment utiliser Axios API ?
 
-## Installation
-### Dans un projet Node.js / Frontend (via npm/yarn)
+### Initialiser le npm pour avoir le dossier package.json 
+
+npm init 
+
+### Installation du module Axios
+#### Dans un projet Node.js / Frontend (via npm/yarn)
 
 npm install axios
 # ou
 yarn add axios
 
-### Via CDN (pour les projets frontend simples)
+#### Via CDN (pour les projets frontend simples)
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-## Fonctionnalités Principales
+## Description du code 
 
-✔ Effectuer des requêtes GET, POST, PUT, DELETE, etc.
-✔ Gestion automatique des données JSON
-✔ Intercepteurs pour requêtes et réponses
-✔ Annulation de requêtes
-✔ Protection contre les attaques XSRF
-✔ Compatible avec Node.js et les navigateurs
+import du module axios : const axios = require('axios');
+utilisation du lien : const PLACEHOLDER_URL_API = ('https://jsonplaceholder.typicode.com/users/');
 
+#### avec la methode GET :
+axios.get(`${PLACEHOLDER_URL_API}`)
+##### Description : afficher tout les objets
 
-## Axios vs Fetch API
+#### avec la methode POST :
+axios.post(`${PLACEHOLDER_URL_API}`, {
+  firstName: 'Fred',
+  lastName: 'Flintstone'
+})
+##### Description : ajouter un nouvelle objet
 
-Fonctionnalité	Axios	Fetch API
-Syntaxe	:
-Plus simple et concise(Axios)	 Bas niveau, plus verbeux(Fetch API)
-Annulation :✅ Oui (CancelToken)(Axios)	❌ Non (sauf avec AbortController)(Fetch API)
-Transformations	: Automatique (JSON)(Axios)	Manuel (response.json())(Fetch API)
-Intercepteurs	✅ Oui(Axios)	❌ Non(Fetch API)
-Compatibilité	Node.js + Navigateurs(Axios)	Navigateurs uniquement(Fetch API)
+#### avec la methode PUT :
+axios.put(`${PLACEHOLDER_URL_API}`, {
+  firstName: 'Fred',
+  lastName: 'Flintstone'
+})
+##### Description : modifier un objet
 
+#### avec la methode DELETE :
+
+axios.delete(`${PLACEHOLDER_URL_API}`)
+##### Description : supprimer un objet
 
 
 ## Documentation
